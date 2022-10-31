@@ -1,0 +1,5 @@
+Marinescu,Matei,22,7.20,1
+Anton,"Ionut",21,9.68,2
+Popescu,Darius,24,8.50,3
+Ionescu,Robert,25,9.10,2
+Antonescu,Vlad,22,7.50,1

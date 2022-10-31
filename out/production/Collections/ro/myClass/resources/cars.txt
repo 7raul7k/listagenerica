@@ -1,0 +1,5 @@
+Dumitru,Audi,2008,benzina
+Enescu,Volvo,2013,benzina
+Florian,Bmw,2015,motorina
+Rares,Mercedes,2009,motorina
+Tudor,BMW,2008,motorina
