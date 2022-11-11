@@ -7,6 +7,8 @@ public class ListaGenerica<U extends Comparable<U> >{
 
     private  Node<U> head=null;
 
+
+
     public void addStart(U obj) {
 
         if (head == null) {
@@ -20,7 +22,6 @@ public class ListaGenerica<U extends Comparable<U> >{
           aux.setNext(head);
           aux.setData(obj);
           head=aux;
-
         }
     }
 
@@ -220,5 +221,7 @@ public class ListaGenerica<U extends Comparable<U> >{
    return aux.getData();
 
     }
+
+
 
 }
