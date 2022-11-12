@@ -98,24 +98,4 @@ public class Set<U extends Comparable<U>> {
         }
         return size;
     }
-    public U get(int pos){
-        Node<U> aux = head;
-        int ct = 0;
-
-        while(aux !=null&&ct!=pos){
-            ct++;
-            aux = aux.getNext();
-        }
-        return aux.getData();
-
-    }
-    public void set(int pos,U obj){
-        Node<U> aux = head;
-        int ct= 0;
-        while(aux!= null && ct!=pos){
-            ct++;
-            aux = aux.getNext();
-        }
-        aux.setData(obj);
-    }
 }
