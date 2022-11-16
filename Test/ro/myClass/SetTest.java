@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SetTest {
 
+
     @Test
     public void add(){
         Set<Student> set = new Set<>();
@@ -88,25 +89,6 @@ public class SetTest {
     }
 
     @Test
-    public void get(){
-        Set<Student> set = new Set<>();
-        Student student = new Student("Popescu","Marcel",23,6.80,3);
-        Student student1 = new Student("Florian","Cristian",21,8.20,1);
-        Student student2 = new Student("Cristescu","Marian",22,9,2);
-        Student student3 = new Student("Andrei","Ionut",25,5.80,1);
-        Student student4 = new Student("Tudor","Eduard",24,9.30,3);
-        Student student5 = new Student("Zamfir","Dragos",26,6.50,4);
-        set.add(student);
-        set.add(student1);
-        set.add(student2);
-        set.add(student3);
-        set.add(student4);
-        set.add(student5);
-        assertEquals(student1,set.get(3));
-    }
-    
-
-    @Test
     public void contains(){
         Set<Student> set = new Set<>();
         Student student = new Student("Popescu","Marcel",23,6.80,3);
@@ -141,4 +123,5 @@ public class SetTest {
 
         set.afisare();
     }
+
 }

@@ -3,9 +3,13 @@ package ro.myClass.structuri_generice;
 //-->elementele trebuie sa fie unice
 //-->adaugate intro-anumita ordine
 
+import ro.myClass.comparator.ComparatorNume;
+
 public class Set<U extends Comparable<U>> {
 
     private Node<U> head = null;
+
+    ComparatorNume<U> comparatorNume = new ComparatorNume<>();
     public boolean add(U obj) {
 
         if (head == null) {
@@ -36,13 +40,13 @@ public class Set<U extends Comparable<U>> {
             } else {
                 Node<U> node = new Node<>();
                 node.setNext(aux);
+                node.setData(obj);
                 prev.setNext(node);//il punem  interior
             }
 
         }
         return true;
         }
-
     public void afisare(){
         Node<U> aux = head;
         while(aux !=null){
@@ -98,4 +102,6 @@ public class Set<U extends Comparable<U>> {
         }
         return size;
     }
+    
+
 }
