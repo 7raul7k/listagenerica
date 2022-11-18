@@ -4,6 +4,7 @@ import ro.myClass.models.Student;
 import ro.myClass.structuri_generice.Set;
 
 import java.io.File;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ControllerSetStudent<U extends Comparable<U>> {
@@ -47,6 +48,10 @@ public class ControllerSetStudent<U extends Comparable<U>> {
 
    public void afisare(){
         this.set.afisare();
+   }
+
+   public void sortareDupaComparator(Comparator comparator){
+       set.sortareDupaComparator(comparator);
    }
 
 }

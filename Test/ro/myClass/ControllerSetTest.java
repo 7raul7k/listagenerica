@@ -1,6 +1,8 @@
 package ro.myClass;
 
 import org.junit.Test;
+import ro.myClass.comparator.ComparatorNumeStudent;
+import ro.myClass.comparator.ComparatorPrenume;
 import ro.myClass.controllers.ControllerSetStudent;
 import ro.myClass.models.*;
 
@@ -69,6 +71,20 @@ public class ControllerSetTest {
         set.add(student1);
 
         set.afisare();
+    }
+
+    @Test
+    public void sortaredupacomparator(){
+        ControllerSetStudent set = new ControllerSetStudent<>();
+        Student student = new Student("Pietrosu","Stefan",22,6.40,2);
+        Student student1 = new Student("Andrei","Ilie",21,8,1);
+        set.add(student);
+        set.add(student1);
+
+        set.sortareDupaComparator(new ComparatorNumeStudent());
+
+        set.afisare();
+
     }
 
 

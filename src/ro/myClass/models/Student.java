@@ -91,4 +91,12 @@ public class Student implements Comparable<Student> {
     public void setMedie(double medie) {
         this.medie = medie;
     }
+
+    public int getAnStudiu() {
+        return anStudiu;
+    }
+
+    public void setAnStudiu(int anStudiu) {
+        this.anStudiu = anStudiu;
+    }
 }

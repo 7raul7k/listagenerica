@@ -3,13 +3,12 @@ package ro.myClass.structuri_generice;
 //-->elementele trebuie sa fie unice
 //-->adaugate intro-anumita ordine
 
-import ro.myClass.comparator.ComparatorNume;
+import java.util.Comparator;
 
 public class Set<U extends Comparable<U>> {
 
     private Node<U> head = null;
 
-    ComparatorNume<U> comparatorNume = new ComparatorNume<>();
     public boolean add(U obj) {
 
         if (head == null) {
@@ -102,6 +101,38 @@ public class Set<U extends Comparable<U>> {
         }
         return size;
     }
-    
 
+    public void set(int pos,U data) {
+            Node<U> aux = head;
+            int ct = 0;
+            while (aux != null && ct != pos) {
+                ct++;
+                aux = aux.getNext();
+            }
+            aux.setData(data);
+    }
+    public U get(int pos){
+        Node<U> aux = head;
+        int ct = 0;
+        while(aux!= null&& ct!= pos){
+            ct++;
+            aux = aux.getNext();
+        }
+
+        return aux.getData();
+    }
+    public void sortareDupaComparator(Comparator comparator){
+        boolean flag = false;
+        do{
+            flag = false;
+            for(int i = 0;i < this.size() - 1 ;i++){
+                if(comparator.compare(this.get(i),this.get(i+1))>0) {
+                    U data = this.get(i);
+                    this.set(i,this.get(i+1));
+                    this.set(i+1,data);
+                    flag = true;
+                }
+            }
+        }while(flag==true);
+    }
 }

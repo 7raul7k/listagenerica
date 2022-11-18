@@ -18,7 +18,6 @@ public class ViewStudent {
     public void show(){
         System.out.println("Apasa 1 pentru a afisa studentii ");
         System.out.println("Apasa 2 pentru a adauga un student");
-        System.out.println("Apasa 3 pentru a sterge un student");
 
     }
     public void play(){
@@ -31,9 +30,9 @@ public class ViewStudent {
                 break;
                 case 2: addStudent();
                 break;
-                default : this.play();
-                case 3: deleteStudent();
+                case 3: stergeStudent();
                 break;
+                default : this.play();
 
             }
         }
@@ -52,7 +51,8 @@ public class ViewStudent {
         Student student = new Student(nume,prenume,varsta,medie,an);
         this.controllerSetStudent.add(student);
     }
-    public void deleteStudent(){
-        System.out.println("Introduceti pozitia");
+    public void stergeStudent(){
+
     }
+
 }
