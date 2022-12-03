@@ -1,5 +1,9 @@
 package ro.myClass.view;
 
+import ro.myClass.comparator.ComparatorAnStudiu;
+import ro.myClass.comparator.ComparatorNumeStudent;
+import ro.myClass.comparator.ComparatorPrenume;
+import ro.myClass.comparator.ComparatorVarsta;
 import ro.myClass.controllers.*;
 import ro.myClass.models.Student;
 import ro.myClass.structuri_generice.*;
@@ -17,7 +21,7 @@ public class ViewStudent {
 
     public void show(){
         System.out.println("Apasa 1 pentru a afisa studentii ");
-        System.out.println("Apasa 2 pentru a adauga un student");
+        System.out.println("Apasa 2 pentru a sorta studentii");
 
     }
     public void play(){
@@ -30,7 +34,7 @@ public class ViewStudent {
                 break;
                 case 2: addStudent();
                 break;
-                case 3: stergeStudent();
+                case 3: sortareDupaComparator();
                 break;
                 default : this.play();
 
@@ -51,7 +55,21 @@ public class ViewStudent {
         Student student = new Student(nume,prenume,varsta,medie,an);
         this.controllerSetStudent.add(student);
     }
-    public void stergeStudent(){
+    public void sortareDupaComparator(){
+        System.out.println("Introduceti tipul de sortare : anStudiu,nume,prenume,varsta ");
+        String choice = scanner.nextLine();
+
+        switch (choice){
+            case "anStudiu": this.controllerSetStudent.sortareDupaComparator(new ComparatorAnStudiu());
+            break;
+            case "nume" : this.controllerSetStudent.sortareDupaComparator(new ComparatorNumeStudent());
+            break;
+            case "prenume" : this.controllerSetStudent.sortareDupaComparator(new ComparatorPrenume());
+            break;
+            case "varsta" : this.controllerSetStudent.sortareDupaComparator(new ComparatorVarsta());
+            break;
+        }
+
 
     }
 
