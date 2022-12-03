@@ -5,8 +5,7 @@ import ro.myClass.models.Student;
 public class ListaGenerica<U extends Comparable<U> >{
 
 
-    private  Node<U> head=null;
-
+    private  Node<U> head = null;
 
 
     public void addStart(U obj) {
@@ -150,7 +149,24 @@ public class ListaGenerica<U extends Comparable<U> >{
         }
         return size;
     }
-    public U get(int pos){
+    public U get(U obj){
+
+        if(head == null){
+            System.out.println("Nu exista nod");
+        }else{
+            Node<U> aux = head;
+            while(aux != null){
+                if(aux.getData().equals(obj)){
+                    return aux.getData();
+                }
+                aux = aux.getNext();
+            }
+
+
+        }
+        return null;
+    }
+    public U get(int pos ){
         Node<U> aux = head;
         int ct = 0;
 
@@ -221,6 +237,19 @@ public class ListaGenerica<U extends Comparable<U> >{
    return aux.getData();
 
     }
+
+    public Node<U>  getPos(U data) {
+        Node<U> aux = head;
+        int pos = 0;
+         while (aux!= null){
+             if(aux.getData().equals(data)){
+                 return aux;
+             }
+             pos++;
+         }
+        return null;
+    }
+
 
 
 

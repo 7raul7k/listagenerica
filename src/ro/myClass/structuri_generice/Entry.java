@@ -1,6 +1,8 @@
 package ro.myClass.structuri_generice;
 
-public class Entry<K,V> {
+import java.util.Objects;
+
+public class Entry<K,V> implements Comparable<Entry<K,V>> {
 
     private K key;
     private V value;
@@ -24,4 +26,18 @@ public class Entry<K,V> {
     }
 
 
+    @Override
+    public int compareTo(Entry<K, V> o) {
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return  this.key.equals(((Entry)o).key);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(key, value);
+    }
 }

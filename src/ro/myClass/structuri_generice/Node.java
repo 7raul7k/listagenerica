@@ -2,6 +2,8 @@ package ro.myClass.structuri_generice;
 
 import ro.myClass.models.Student;
 
+import java.util.Comparator;
+
 public class Node<T> {
 
     private Node next=null;
@@ -30,4 +32,7 @@ public class Node<T> {
     public void setData(T data) {
         this.data = data;
     }
+
+
+
 }

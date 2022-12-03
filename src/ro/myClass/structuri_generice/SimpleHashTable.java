@@ -5,15 +5,11 @@ public class SimpleHashTable<K,V>  {
     private  Entry<K,V>[]  entries;
 
     public SimpleHashTable() {
-
         entries= new Entry[10];
     }
 
     public void put(K key , V value){
-
         int hashKey = hashKey(key);
-
-
         if(occupied(hashKey)){
             int stopIndex= hashKey;
 
@@ -62,8 +58,36 @@ public class SimpleHashTable<K,V>  {
         return -1;
     }
 
-   public boolean occupied(int key){
-        return entries[key]!=null;
+    public V get(K key){
+        int hashKey = find(key);
+        return hashKey==-1?null:entries[hashKey].getValue();
+    }
+
+    public V remove(K key ){
+
+        int hashKey = hashKey(key);
+
+
+        if(hashKey == -1){
+
+            return  null;
+        }
+        V value=entries[hashKey].getValue();
+        entries[hashKey]=null;
+        Entry<K,V>[]oldEntries=entries;
+
+        entries= new Entry[oldEntries.length];
+        for(int i=0;i<oldEntries.length;i++){
+            if(oldEntries[i]!=null){
+                put(oldEntries[i].getKey(),oldEntries[i].getValue());
+            }
+        }
+        return value;
+
+
+    }
+   public boolean occupied(int hashKey){
+        return entries[hashKey]!=null;
    }
 
     private  int hashKey(K key){
