@@ -5,6 +5,8 @@ import ro.myClass.structuri_generice.ListaGenerica;
 import ro.myClass.structuri_generice.Node;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ControllerStudent {
@@ -111,6 +113,18 @@ public class ControllerStudent {
         return studentList.sortare();
 
   }
+    public void save(){
+        try{
+            File file = new File("C:\\mycode\\JavaBasics\\Collections\\Collections\\src\\ro\\myClass\\resources\\students.txt");
+            FileWriter fileWriter = new FileWriter(file);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.print(this);
+            printWriter.flush();
+            printWriter.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
 }
