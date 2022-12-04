@@ -4,6 +4,8 @@ import ro.myClass.models.Student;
 import ro.myClass.structuri_generice.Set;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -53,5 +55,17 @@ public class ControllerSetStudent<U extends Comparable<U>> {
    public void sortareDupaComparator(Comparator comparator){
        set.sortareDupaComparator(comparator);
    }
+    public void save(){
+        try{
+            File file = new File("C:\\mycode\\JavaBasics\\Collections\\Collections\\src\\ro\\myClass\\resources\\students.txt");
+            FileWriter fileWriter = new FileWriter(file);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.print(this);
+            printWriter.flush();
+            printWriter.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }
